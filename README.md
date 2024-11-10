@@ -71,6 +71,16 @@ The smart contract for the FindNow platform is deployed on the Sepolia Ethereum 
 5. **Marking as Received**:  
    When the organ reaches its destination, the receiving hospital uses the `markOrganAsReceived` function to finalize the process and update the hospital’s donation and listing statistics.
 
+## Deployed on Vercel
+
+FindNow is deployed and accessible online for easy access and testing. Visit the live application using the link below:
+
+🔗 **[FindNow on Vercel](https://find-now.vercel.app)**
+
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-%23000000.svg?logo=vercel&style=for-the-badge)](https://find-now.vercel.app)
+
+With this deployment, you can explore FindNow's functionalities, including real-time organ tracking and hospital collaboration, right from your browser.
+
 ## Future Scope
 
 - **Integration with IoT Devices**:  
