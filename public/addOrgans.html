@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Organ | FindNow</title>
+    
+    <!-- Link to the shared CSS file for consistent styling -->
+    <link rel="stylesheet" href="css/output.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/FINDNOWlogoCopysq180x108.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/FINDNOWlogoCopysq32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/FINDNOWlogoCopysq16x16.png">
+</head>
+<body class="bg-light dark:bg-gray-900">
+    <!-- Header -->
+    <header class="fixed w-full">
+        <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
+            <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
+                <a href="#" class="flex items-center">
+                    <img src="images/FINDNOWlogoCopysq.png" class="h-6 mr-3 sm:h-9" alt="FindNow Logo" />
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">FindNow</span>
+                </a>
+                <div class="flex items-center lg:order-2">
+                    <button id="walletButton" class="text-white bg-purple-700 hover:bg-purple-800 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 dark:bg-purple-600">Connect Wallet</button>
+                </div>
+                <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                        <li><a href="index.html" class="block py-2 pl-3 pr-4 text-gray-700 dark:text-white">Home</a></li>
+                        <li><a href="directory.html" class="block py-2 pl-3 pr-4 text-purple-700 dark:text-white">Directory</a></li>
+                        <li><a href="addOrgans.html" class="block py-2 pl-3 pr-4 text-gray-700 lg:text-purple-700">Add Organs</a></li>
+                        <li><a href="requests.html" class="block py-2 pl-3 pr-4 text-gray-700 dark:text-white">Requests</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Add Organ Form -->
+    <main class="container mt-20 pt-5 pb-8 mx-auto max-w-screen-md">
+        <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-purple-700 dark:text-white mb-6 text-center">Add Organ</h2>
+            
+            <form id="addOrganForm">
+                <div class="mb-4">
+                    <label for="organName" class="block text-gray-700 dark:text-gray-400 font-medium mb-2">Organ Name</label>
+                    <input type="text" id="organName" class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="organDetails" class="block text-gray-700 dark:text-gray-400 font-medium mb-2">Organ Details</label>
+                    <textarea id="organDetails" rows="3" class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required></textarea>
+                </div>
+                
+                <button type="submit" class="w-full bg-purple-700 hover:bg-purple-800 text-white font-semibold py-2 px-4 rounded-lg dark:bg-purple-600 dark:hover:bg-purple-700">Add Organ</button>
+            </form>
+            <div id="statusMessage" class="mt-4 text-center"></div>
+        </div>
+    </main>
+
+    <script src="js/addOrgans.js"></script>
+</body>
+</html>

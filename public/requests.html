@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindNow - Requested Organs</title>
+    <link href="./css/output.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/FINDNOWlogoCopysq180x108.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/FINDNOWlogoCopysq32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/FINDNOWlogoCopysq16x16.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed w-full">
+        <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
+            <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
+                <a href="#" class="flex items-center">
+                    <img src="images/FINDNOWlogoCopysq.png" class="h-6 mr-3 sm:h-9" alt="FindNow Logo" />
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">FindNow</span>
+                </a>
+                <div class="flex items-center lg:order-2">
+                    <button id="walletButton" class="text-white bg-purple-700 hover:bg-purple-800 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 dark:bg-purple-600">Connect Wallet</button>
+                </div>
+                <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                        <li><a href="index.html" class="block py-2 pl-3 pr-4 text-gray-700 dark:text-white">Home</a></li>
+                        <li><a href="directory.html" class="block py-2 pl-3 pr-4 text-purple-700 dark:text-white">Directory</a></li>
+                        <li><a href="addOrgans.html" class="block py-2 pl-3 pr-4 text-gray-700 dark:text-white">Add Organs</a></li>
+                        <li><a href="requests.html" class="block py-2 pl-3 pr-4 text-gray-700 lg:text-purple-700">Requests</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Connect Wallet Modal -->
+<div id="walletModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 w-80">
+        <h2 class="text-xl font-bold text-purple-700 dark:text-white mb-4">Wallet Options</h2>
+        
+        <!-- Wallet Address Section -->
+        <div id="walletAddressSection" class="mb-4 text-gray-700 dark:text-gray-400">
+            <strong>Connected Wallet:</strong>
+            <p id="connectedWalletAddress"></p>
+        </div>
+
+        <!-- Buttons -->
+        <button id="disconnectWalletButton" class="text-white bg-red-600 hover:bg-red-700 font-medium rounded-lg text-sm px-4 py-2 mb-2 w-full">Disconnect Wallet</button>
+        <button id="goToRequestedPageButton" class="text-white bg-purple-700 hover:bg-purple-800 font-medium rounded-lg text-sm px-4 py-2 mb-2 w-full">Go to Requested Page</button>
+
+        <!-- Add Hospital Button for Owner -->
+        <button id="addHospitalButton" class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-4 py-2 mb-2 w-full hidden">Add New Hospital</button>
+        
+        <!-- Close Button -->
+        <button onclick="toggleWalletModal()" class="text-gray-700 dark:text-gray-400 font-medium rounded-lg text-sm px-4 py-2 w-full">Close</button>
+    </div>
+</div>
+
+    <!-- Requested Organs Content -->
+    <section class="bg-white dark:bg-gray-900 pt-20 pb-8">
+        <div class="container mx-auto max-w-screen-xl px-4">
+            <h1 class="text-4xl font-extrabold leading-none tracking-tight text-purple-500 mb-8">Requested Organs</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Requested Organs Column -->
+                <div id="requested-organs" class="p-6 bg-gray-100 rounded-lg shadow-lg dark:bg-gray-800">
+                    <h2 class="text-2xl font-bold text-purple-700 dark:text-white mb-4">Requested by You</h2>
+                    <div id="requestedByYouContainer"></div>
+                </div>
+                
+                <!-- Organs Requested from You Column -->
+                <div id="organs-requested-from-you" class="p-6 bg-gray-100 rounded-lg shadow-lg dark:bg-gray-800">
+                    <h2 class="text-2xl font-bold text-purple-700 dark:text-white mb-4">Requests on Your Organs</h2>
+                    <div id="requestsOnYourOrgansContainer"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirmed Organs Section -->
+    <section id="confirmed-organs-section" class="bg-gray-50 dark:bg-gray-900 py-8">
+        <div class="container mx-auto max-w-screen-xl px-4">
+            <h2 class="text-3xl font-extrabold leading-none tracking-tight text-purple-500 mb-6">Confirmed Organs</h2>
+            <div id="confirmedOrgansContainer" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Confirmed organs will be injected here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-4 dark:bg-gray-900">
+        <div class="text-center text-gray-700 dark:text-gray-400">
+            &copy; 2024 FindNow. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Include requested.js -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js"></script>
+    <script src="js/requested.js"></script>
+</body>
+</html>
