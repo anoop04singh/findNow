@@ -97,7 +97,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     // Load Contract and Check if the Connected Wallet is the Contract Owner
     async function loadContract(web3) {
-        const response = await fetch('findNowABI.json');
+        const response = await fetch('/findNowABI.json');
         const abi = await response.json();
         contract = new web3.eth.Contract(abi, '0x90D72514a1dd3E7061566a3aecCa64FB4d94c07B');
         const ownerAddress = await contract.methods.owner().call();
